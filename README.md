@@ -187,7 +187,7 @@
     - Add husky hook for commit message linting
 
 		```bash
-		npx husky add .hsuky/commit-msg 'npx --no -- commitlint --edit "$1"'
+		npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 		```
 
 6. VS Code Settings - Create `settings.json` inside `.vscode` folder
