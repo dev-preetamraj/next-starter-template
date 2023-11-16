@@ -30,29 +30,26 @@
 
 3.  ESLint
     It comes with the project initialization so we do not need to install it separately.
+    - Install the following package
+      ```bash
+      yarn add -D @typescript-eslint/eslint-plugin
+      ```
 
-    - Update `.eslintrc.json` file
+    - Update the `.eslintrc.json` file
 
     ```json
     {
-      "extends": [
-        "next",
-        "next/core-web-vitals",
-        "eslint:recommended"
-        // "plugin:storybook/recommended" [if story book is included]
-      ],
-      "globals": {
-        "React": "readonly"
-      },
-      "rules": {
-        "no-unused-vars": [
-          1,
-          {
-            "args": "after-used",
-            "argsIgnorePattern": "^_"
-          }
-        ]
-      }
+    	"extends": "next/core-web-vitals",
+	"plugins": ["@typescript-eslint"],
+	"globals": {
+	  "React": "readonly"
+	},
+	"rules": {
+	  "no-unused-vars": "off",
+	  "@typescript-eslint/no-unused-vars": ["error"],
+	  "import/no-unresolved": "error",
+	  "import/named": "error"
+	}
       // uncomment if using storybook
       // "overrides": [
       //   {
@@ -62,7 +59,7 @@
     }
     ```
 
-4.  Prettier
+5.  Prettier
 
     - Create `.prettierignore` and update the content given below
 
@@ -91,7 +88,7 @@
     "prettier": "prettier --write .",
     ```
 
-5.  Git Hooks (Husky)
+6.  Git Hooks (Husky)
 
     - Install the package
 
@@ -190,7 +187,7 @@
 		npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 		```
 
-6. VS Code Settings - Create `settings.json` inside `.vscode` folder
+7. VS Code Settings - Create `settings.json` inside `.vscode` folder
 
 	- Update the file with below content
 
